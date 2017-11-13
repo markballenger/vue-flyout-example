@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Hello from '@/components/Hello'
 import Pipeline from '@/components/Pipeline'
 import Relationship from '@/components/Relationship'
 
@@ -11,7 +10,7 @@ export default new Router({
     {
       path: '/',
       name: 'Hello',
-      component: Hello
+      component: Relationship
     },
     {
       path: '/relationship',

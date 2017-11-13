@@ -2,9 +2,7 @@
  * State
  */
 const state = {
-    flyouts: [],
-    company: false,
-    pipeline: false
+    flyouts: []
 }
 
 /**
@@ -13,9 +11,6 @@ const state = {
 const actions = {
     addFlyout ({commit}, component) {
         commit('add_flyout', component)
-    },
-    toggle ({commit}, name) {
-        commit('toggle', name)
     }
 }
 

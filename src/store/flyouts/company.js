@@ -2,7 +2,6 @@
  * State
  */
 const state = {
-    visible: false,
     dbaEdit: false,
     legalEdit: false
 }
@@ -11,9 +10,6 @@ const state = {
  * Actions
  */
 const actions = {
-    setVisible ({commit}, val) {
-        commit('set_visible', !state.visible)
-    },
     setDbaEdit ({commit}) {
         commit('set_dba_edit')
     },
@@ -26,9 +22,6 @@ const actions = {
  * Mutations
  */
 const mutations = {
-    set_visible (state, data) {
-        state.visible = data
-    },
     set_dba_edit (state, data) {
         state.dbaEdit = data
     },
@@ -41,7 +34,6 @@ const mutations = {
  * Getters
  */
 const getters = {
-    visible: x => x.visible,
     dbaEdit: x => x.dbaEdit,
     legalEdit: x => x.legalEdit
 }

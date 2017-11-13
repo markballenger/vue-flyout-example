@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import {mapGetters, mapActions} from 'vuex'
+import {mapActions} from 'vuex'
 import Hello from '@/components/Hello'
 export default { 
     
@@ -15,16 +15,11 @@ export default {
     },
     methods: {
         ...mapActions([
-            'setVisible',
-            'addFlyout',
-            'toggle'
+            'addFlyout'
         ]),
         go () {
             this.addFlyout(Hello)
         }
-    },
-    computed: {
-        ...mapGetters(['visible'])
     }
 }
 </script>
