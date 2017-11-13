@@ -20,9 +20,6 @@ const actions = {
 const mutations = {
     add_flyout (state, data) {
         state.flyouts.push(data)
-    },
-    toggle (state, name) {
-        state[name] = !state[name]
     }
 }
 
