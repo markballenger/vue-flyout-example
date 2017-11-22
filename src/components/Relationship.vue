@@ -7,7 +7,7 @@
 
 <script>
 import {mapActions} from 'vuex'
-import Hello from '@/components/Hello'
+import Company from '@/components/Company'
 export default { 
     
     data () {
@@ -18,7 +18,7 @@ export default {
             'addFlyout'
         ]),
         go () {
-            this.addFlyout(Hello)
+            this.addFlyout(Company)
         }
     }
 }

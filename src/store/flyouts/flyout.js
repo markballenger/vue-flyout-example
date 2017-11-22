@@ -1,3 +1,5 @@
+import _ from 'lodash'
+
 /**
  * State
  */
@@ -11,6 +13,9 @@ const state = {
 const actions = {
     addFlyout ({commit}, component) {
         commit('add_flyout', component)
+    },
+    back ({commit}, component) {
+        commit('set_back')
     }
 }
 
@@ -20,6 +25,9 @@ const actions = {
 const mutations = {
     add_flyout (state, data) {
         state.flyouts.push(data)
+    },
+    set_back (state, data) { 
+        state.flyouts = _.drop(state.flyouts, 1)
     }
 }
 

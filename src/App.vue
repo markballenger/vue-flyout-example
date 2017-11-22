@@ -53,6 +53,7 @@
         </v-container>
       </v-content>
     </main>
+    
     <v-navigation-drawer
       temporary
       :right="right"
@@ -67,26 +68,16 @@
           <v-list-tile-title>Switch drawer (click me)</v-list-tile-title>
         </v-list-tile>
       </v-list>
-    </v-navigation-drawer>
+  </v-navigation-drawer>
 
 
-        <v-layout>
-          <transition-group name="slide-fade"  > 
-          <v-flex xs6  v-for="flyout in flyouts" :key="'name'">
-            <v-card>
-                <component keep-alive :is="flyout" transition="slide-fade"></component>
-            </v-card>
-          </v-flex>
-          </transition-group>
-        </v-layout>
-
-
-
-        
-
-    <v-footer :fixed="fixed" app>
-      <span>&copy; 2017</span>
-    </v-footer>
+    <v-layout>
+        <flyout v-for="(flyout, index) in flyouts" 
+          :key="flyout.name" 
+          v-bind:style="'left: ' + index * 300 + 'px'">
+          <component keep-alive :is="flyout"></component>
+        </flyout>
+    </v-layout>
 
 
 
@@ -95,7 +86,11 @@
 
 <script>
   import { mapActions, mapGetters } from 'vuex'
+  import Flyout from '@/components/flyout'
   export default {
+    components: { 
+      Flyout
+    },
     mounted () {
       window.setInterval(() => {
         this.show = !this.show
@@ -148,7 +143,12 @@
 }
 
 
-
+.navigation-drawer { 
+  box-shadow:
+    20px 0px 10px -5px rgba(0,0,0,0.2), 
+    20px 0px 24px 2px rgba(0,0,0,0.14), 
+    20px 0px 30px 5px rgba(0,0,0,0.12);
+}
 
 
 
